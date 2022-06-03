@@ -4,7 +4,7 @@
 <h3 class="center-aling">Register</h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
             <div class="row">
                 <div class="input-field col s12">
@@ -15,7 +15,9 @@
             </div>
                 <div class="row">
                     <div class="input-field col s12">
-                    <i class="fa-solid fa-lock text-darken-2"></i><input id="password" name="password" type="password" class="validate">
+                        <i class="fa-solid fa-lock text-darken-2"></i>
+                        <input id="password" name="password" type="password" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     <label for="password">Password</label>
                     </div>
                 </div>
